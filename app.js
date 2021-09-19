@@ -1,8 +1,17 @@
 const item = document.querySelector('.item')
+const placeholders = document.querySelectorAll('.placeholder')
 
 item.addEventListener('dragstart', dragstart)
 item.addEventListener('dragend', dragend)
 
+for (const placeholder of placeholders) {
+    placeholder.addEventListener('dragover')
+    placeholder.addEventListener('dragenter')
+    placeholder.addEventListener('dragleave')
+    placeholder.addEventListener('drop')
+
+
+}
 
 function dragstart(event){
   event.target.classList.add('hold')
